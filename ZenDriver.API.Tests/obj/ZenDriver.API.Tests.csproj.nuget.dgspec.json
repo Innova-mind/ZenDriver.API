@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nicol\\OneDrive - Universidad Peruana de Ciencias\\Universidad\\Ciclo 2023-01- 6 ciclo\\AppMov\\ZenDriver.API\\ZenDriver.API.Tests\\ZenDriver.API.Tests.csproj": {}
+    "C:\\Users\\Usuario\\Desktop\\7mo ciclo\\Moviles\\TF\\CODE\\ZenDriver.API.Tests\\ZenDriver.API.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nicol\\OneDrive - Universidad Peruana de Ciencias\\Universidad\\Ciclo 2023-01- 6 ciclo\\AppMov\\ZenDriver.API\\ZenDriver.API.Tests\\ZenDriver.API.Tests.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\7mo ciclo\\Moviles\\TF\\CODE\\ZenDriver.API.Tests\\ZenDriver.API.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nicol\\OneDrive - Universidad Peruana de Ciencias\\Universidad\\Ciclo 2023-01- 6 ciclo\\AppMov\\ZenDriver.API\\ZenDriver.API.Tests\\ZenDriver.API.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\7mo ciclo\\Moviles\\TF\\CODE\\ZenDriver.API.Tests\\ZenDriver.API.Tests.csproj",
         "projectName": "ZenDriver.API.Tests",
-        "projectPath": "C:\\Users\\nicol\\OneDrive - Universidad Peruana de Ciencias\\Universidad\\Ciclo 2023-01- 6 ciclo\\AppMov\\ZenDriver.API\\ZenDriver.API.Tests\\ZenDriver.API.Tests.csproj",
-        "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nicol\\OneDrive - Universidad Peruana de Ciencias\\Universidad\\Ciclo 2023-01- 6 ciclo\\AppMov\\ZenDriver.API\\ZenDriver.API.Tests\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\7mo ciclo\\Moviles\\TF\\CODE\\ZenDriver.API.Tests\\ZenDriver.API.Tests.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\7mo ciclo\\Moviles\\TF\\CODE\\ZenDriver.API.Tests\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,15 +22,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\nicol\\OneDrive - Universidad Peruana de Ciencias\\Universidad\\Ciclo 2023-01- 6 ciclo\\AppMov\\ZenDriver.API\\ZenDriver.API\\ZenDriver.API.csproj": {
-                "projectPath": "C:\\Users\\nicol\\OneDrive - Universidad Peruana de Ciencias\\Universidad\\Ciclo 2023-01- 6 ciclo\\AppMov\\ZenDriver.API\\ZenDriver.API\\ZenDriver.API.csproj"
+              "C:\\Users\\Usuario\\Desktop\\7mo ciclo\\Moviles\\TF\\CODE\\ZenDriver.API\\ZenDriver.API.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\Desktop\\7mo ciclo\\Moviles\\TF\\CODE\\ZenDriver.API\\ZenDriver.API.csproj"
               }
             }
           }
@@ -96,25 +91,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\nicol\\OneDrive - Universidad Peruana de Ciencias\\Universidad\\Ciclo 2023-01- 6 ciclo\\AppMov\\ZenDriver.API\\ZenDriver.API\\ZenDriver.API.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\7mo ciclo\\Moviles\\TF\\CODE\\ZenDriver.API\\ZenDriver.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nicol\\OneDrive - Universidad Peruana de Ciencias\\Universidad\\Ciclo 2023-01- 6 ciclo\\AppMov\\ZenDriver.API\\ZenDriver.API\\ZenDriver.API.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\7mo ciclo\\Moviles\\TF\\CODE\\ZenDriver.API\\ZenDriver.API.csproj",
         "projectName": "ZenDriver.API",
-        "projectPath": "C:\\Users\\nicol\\OneDrive - Universidad Peruana de Ciencias\\Universidad\\Ciclo 2023-01- 6 ciclo\\AppMov\\ZenDriver.API\\ZenDriver.API\\ZenDriver.API.csproj",
-        "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nicol\\OneDrive - Universidad Peruana de Ciencias\\Universidad\\Ciclo 2023-01- 6 ciclo\\AppMov\\ZenDriver.API\\ZenDriver.API\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\7mo ciclo\\Moviles\\TF\\CODE\\ZenDriver.API\\ZenDriver.API.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\7mo ciclo\\Moviles\\TF\\CODE\\ZenDriver.API\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -122,7 +113,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -205,7 +195,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

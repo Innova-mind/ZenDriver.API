@@ -1,3 +1,4 @@
+using ZenDriver.API.DriverProfile.Services;
 using ZenDriver.API.Security.Authorization.Handlers.Implementations;
 using ZenDriver.API.Security.Authorization.Handlers.Interfaces;
 using ZenDriver.API.Security.Authorization.Middleware;
@@ -12,6 +13,10 @@ using ZenDriver.API.Shared.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using ZenDriver.API.DriverProfile.Domain.Repositories;
+using ZenDriver.API.DriverProfile.Domain.Services;
+using ZenDriver.API.DriverProfile.Persistence.Repositories;
+using ZenDriver.API.DriverProfile.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -99,11 +104,16 @@ builder.Services.AddScoped<IJwtHandler, JwtHandler>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 
+
+
 //AutoMapper Configuration
 
 builder.Services.AddAutoMapper(
     typeof(ZenDriver.API.Security.Mapping.ModelToResourceProfile),
-    typeof(ZenDriver.API.Security.Mapping.ResourceToModelProfile)
+    typeof(ZenDriver.API.Security.Mapping.ResourceToModelProfile),
+    typeof(ZenDriver.API.DriverProfile.Mapping.ModelToResourceProfile),
+    typeof(ZenDriver.API.DriverProfile.Mapping.ResourceToModelProfile)
+    
     );
 
 var app = builder.Build();
