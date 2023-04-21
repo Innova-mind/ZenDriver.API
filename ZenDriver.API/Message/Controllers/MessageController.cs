@@ -2,15 +2,12 @@
 using ZenDriver.API.Message.Domain.Models;
 using ZenDriver.API.Message.Domain.Services;
 using ZenDriver.API.Message.Resources;
-using ZenDriver.API.Security.Authorization.Attributes;
-using ZenDriver.API.Security.Domain.Models;
 using ZenDriver.API.Shared.Extensions;
 using Microsoft.AspNetCore.Mvc;
-using System.Runtime.CompilerServices;
 
 namespace ZenDriver.API.Message.Controllers;
 
-[Route("/api/v1/{userid}/[controller]")]
+[Route("/api/v1/[controller]")]
     
 public class MessageController : ControllerBase
 {
@@ -23,37 +20,16 @@ public class MessageController : ControllerBase
         _mapper = mapper;
     }
 
-    [HttpGet("{id}")]
-    public async Task<IEnumerable<MessageResource>> GetAllMessagesAsync(int userid, int id)
+    [HttpGet]
+    public async Task<IEnumerable<MessageResource>> GetAllMessagesAsync()
     {
         var messages = await _messageService.GetMessagesAsync();
         var resources = _mapper.Map<IEnumerable<Message>, IEnumerable<MessageResource>>(messages);
-        
 
-        resources = resources.Where(x => (x.Emitter.Id == userid && x.Receiver.Id == id) || (x.Emitter.Id == id && x.Receiver.Id == userid)).OrderBy(x => x.Id).ToList();
         return resources;
     }
 
-
-    [HttpGet("recruiters")]
-    public async Task<IEnumerable<MessageResource>> GetLastMessageRecruiter(int userid)
-    {
-        var messages2 = await _messageService.GetLastMessageRecruiter(userid);
-        var resources2 = _mapper.Map<IEnumerable<Message>, IEnumerable<MessageResource>>(messages2);
-
-        return resources2;
-    }
-
-    [HttpGet("drivers")]
-    public async Task<IEnumerable<MessageResource>> GetLastMessageDriver(int userid)
-    {
-        var messages3 = await _messageService.GetLastMessageDriver(userid);
-        var resources3 = _mapper.Map<IEnumerable<Message>, IEnumerable<MessageResource>>(messages3);
-
-        return resources3;
-    }
-
-    [HttpPost("{id}")]
+    [HttpPost]
     public async Task<IActionResult> AddMessageAsync([FromBody] SaveMessageResource resource)
     {
         if (!ModelState.IsValid)

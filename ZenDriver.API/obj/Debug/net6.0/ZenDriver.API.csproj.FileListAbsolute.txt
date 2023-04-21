@@ -63,3 +63,13 @@ C:\Users\nicol\OneDrive - Universidad Peruana de Ciencias\Universidad\Ciclo 2023
 C:\Users\nicol\OneDrive - Universidad Peruana de Ciencias\Universidad\Ciclo 2023-01- 6 ciclo\AppMov\ZenDriver.API\ZenDriver.API\obj\Debug\net6.0\ZenDriver.API.pdb
 C:\Users\nicol\OneDrive - Universidad Peruana de Ciencias\Universidad\Ciclo 2023-01- 6 ciclo\AppMov\ZenDriver.API\ZenDriver.API\obj\Debug\net6.0\ZenDriver.API.genruntimeconfig.cache
 C:\Users\nicol\OneDrive - Universidad Peruana de Ciencias\Universidad\Ciclo 2023-01- 6 ciclo\AppMov\ZenDriver.API\ZenDriver.API\obj\Debug\net6.0\ref\ZenDriver.API.dll
+C:\ZenDriver.API\ZenDriver.API\obj\Debug\net6.0\ZenDriver.API.csproj.AssemblyReference.cache
+C:\ZenDriver.API\ZenDriver.API\obj\Debug\net6.0\ZenDriver.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\ZenDriver.API\ZenDriver.API\obj\Debug\net6.0\ZenDriver.API.AssemblyInfoInputs.cache
+C:\ZenDriver.API\ZenDriver.API\obj\Debug\net6.0\ZenDriver.API.AssemblyInfo.cs
+C:\ZenDriver.API\ZenDriver.API\obj\Debug\net6.0\ZenDriver.API.csproj.CoreCompileInputs.cache
+C:\ZenDriver.API\ZenDriver.API\obj\Debug\net6.0\ZenDriver.API.MvcApplicationPartsAssemblyInfo.cs
+C:\ZenDriver.API\ZenDriver.API\obj\Debug\net6.0\ZenDriver.API.MvcApplicationPartsAssemblyInfo.cache
+C:\ZenDriver.API\ZenDriver.API\obj\Debug\net6.0\ZenDriver.API.dll
+C:\ZenDriver.API\ZenDriver.API\obj\Debug\net6.0\refint\ZenDriver.API.dll
+C:\ZenDriver.API\ZenDriver.API\obj\Debug\net6.0\ZenDriver.API.pdb
