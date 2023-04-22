@@ -4,7 +4,6 @@ using System.Text;
 using ZenDriver.API.Security.Domain.Services.Communication;
 using ZenDriver.API.Security.Resources;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Newtonsoft.Json;
 using SpecFlow.Internal.Json;
 using TechTalk.SpecFlow.Assist;
@@ -19,9 +18,12 @@ public sealed class UsersServiceStepDefinitions : WebApplicationFactory<Program>
 
     private readonly WebApplicationFactory<Program> _factory;
 
-    public UsersServiceStepDefinitions(WebApplicationFactory<Program> factory)
+    public UsersServiceStepDefinitions(WebApplicationFactory<Program> factory, HttpClient client, Uri baseUri, Task<HttpResponseMessage> response)
     {
         _factory = factory;
+        Client = client;
+        BaseUri = baseUri;
+        Response = response;
     }
     
     private HttpClient Client { get; set; }
