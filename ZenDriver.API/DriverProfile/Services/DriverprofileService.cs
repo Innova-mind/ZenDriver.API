@@ -1,4 +1,4 @@
-using ZenDriver.API.DriverProfile.Domain.Communication.Models;
+using ZenDriver.API.DriverProfile.Domain.Models;
 using ZenDriver.API.DriverProfile.Domain.Repositories;
 using ZenDriver.API.DriverProfile.Domain.Services;
 using ZenDriver.API.DriverProfile.Domain.Services.Communication;
@@ -16,18 +16,18 @@ public class DriverprofileService : IDriverprofileService
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<IEnumerable<Driverprofile>> ListAsync()
+    public async Task<IEnumerable<Domain.Models.DriverProfile>> ListAsync()
     {
         return await _DriverprofileRepository.ListAsync();
     }
 
-    public async Task<DriverprofileResponse> SaveAsync(Driverprofile Driverprofile)
+    public async Task<DriverprofileResponse> SaveAsync(Domain.Models.DriverProfile driverProfile)
     {
         try
         {
-            await _DriverprofileRepository.AddAsync(Driverprofile);
+            await _DriverprofileRepository.AddAsync(driverProfile);
             await _unitOfWork.CompleteAsync();
-            return new DriverprofileResponse(Driverprofile);
+            return new DriverprofileResponse(driverProfile);
         }
         catch (Exception e)
         {
@@ -35,14 +35,14 @@ public class DriverprofileService : IDriverprofileService
         }
     }
 
-     public async Task<DriverprofileResponse> UpdateAsync(int id, Driverprofile Driverprofile)
+     public async Task<DriverprofileResponse> UpdateAsync(int id, Domain.Models.DriverProfile driverProfile)
      {
          var existingDriverprofile = await _DriverprofileRepository.FindByIdAsync(id);
     
          if (existingDriverprofile == null)
              return new DriverprofileResponse("Social Network not found");
-         existingDriverprofile.DriverId = Driverprofile.DriverId;
-         existingDriverprofile.LicenseId = Driverprofile.LicenseId;
+         existingDriverprofile.DriverId = driverProfile.DriverId;
+         existingDriverprofile.LicenseId = driverProfile.LicenseId;
          
          try
          {

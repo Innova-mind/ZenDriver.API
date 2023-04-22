@@ -1,4 +1,4 @@
-using ZenDriver.API.DriverProfile.Domain.Communication.Models;
+using ZenDriver.API.DriverProfile.Domain.Models;
 using ZenDriver.API.Shared.Domain.Services.Communication;
 
 namespace ZenDriver.API.DriverProfile.Domain.Services.Communication;

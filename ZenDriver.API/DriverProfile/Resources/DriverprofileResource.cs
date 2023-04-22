@@ -1,4 +1,3 @@
-using ZenDriver.API.DriverProfile.Domain.Communication.Models;
 using ZenDriver.API.DriverProfile.Domain.Models;
 
 namespace ZenDriver.API.DriverProfile.Resources;

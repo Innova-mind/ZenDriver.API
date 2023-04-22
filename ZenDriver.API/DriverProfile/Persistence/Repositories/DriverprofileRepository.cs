@@ -2,7 +2,7 @@ using ZenDriver.API.DriverProfile.Domain.Repositories;
 using ZenDriver.API.Shared.Persistence.Contexts;
 using ZenDriver.API.Shared.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
-using ZenDriver.API.DriverProfile.Domain.Communication.Models;
+using ZenDriver.API.DriverProfile.Domain.Models;
 
 namespace ZenDriver.API.DriverProfile.Persistence.Repositories;
 public class DriverprofileRepository : BaseRepository, IDriverprofileRepository
@@ -12,7 +12,7 @@ public class DriverprofileRepository : BaseRepository, IDriverprofileRepository
 
     }
     
-    public async Task<IEnumerable<Driverprofile>> ListAsync()
+    public async Task<IEnumerable<Domain.Models.DriverProfile>> ListAsync()
     {
         return await _context.Driverprofiles
             .Include(p => p.Driver)
@@ -20,12 +20,12 @@ public class DriverprofileRepository : BaseRepository, IDriverprofileRepository
             .ToListAsync();
     }
 
-    public async Task AddAsync(Driverprofile Driverprofile)
+    public async Task AddAsync(Domain.Models.DriverProfile driverProfile)
     {
-        await _context.Driverprofiles.AddAsync(Driverprofile);
+        await _context.Driverprofiles.AddAsync(driverProfile);
     }
 
-    public async Task<Driverprofile> FindByIdAsync(int DriverprofileId)
+    public async Task<Domain.Models.DriverProfile> FindByIdAsync(int DriverprofileId)
     {
         return await _context.Driverprofiles
             .Include(p => p.Driver)
@@ -33,13 +33,13 @@ public class DriverprofileRepository : BaseRepository, IDriverprofileRepository
             .FirstOrDefaultAsync(p => p.Id == DriverprofileId);
     }
     
-    public void Update(Driverprofile Driverprofile)
+    public void Update(Domain.Models.DriverProfile driverProfile)
     {
-        _context.Driverprofiles.Update(Driverprofile);
+        _context.Driverprofiles.Update(driverProfile);
     }
 
-    public void Remove(Driverprofile Driverprofile)
+    public void Remove(Domain.Models.DriverProfile driverProfile)
     {
-        _context.Driverprofiles.Remove(Driverprofile);
+        _context.Driverprofiles.Remove(driverProfile);
     }
 }

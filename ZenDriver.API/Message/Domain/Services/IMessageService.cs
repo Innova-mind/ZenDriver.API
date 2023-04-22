@@ -5,7 +5,7 @@ namespace ZenDriver.API.Message.Domain.Services;
 
 public interface IMessageService
 {     
-    Task<IEnumerable<Message>> GetMessagesAsync();
+    Task<IEnumerable<Models.Message>> GetMessagesAsync();
 
-    Task<MessageResponse> AddMessageAsync(Message message);
+    Task<MessageResponse> AddMessageAsync(Models.Message message);
 }

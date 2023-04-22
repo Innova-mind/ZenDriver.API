@@ -16,7 +16,7 @@ public class EducationRepository : BaseRepository, IEducationRepository
     public async Task<IEnumerable<Education>> ListAsync()
     {
         return await _context.Educations
-            .Include(p => p.Driverprofile)
+            .Include(p => p.DriverProfile)
             .ToListAsync();
     }
 
@@ -28,7 +28,7 @@ public class EducationRepository : BaseRepository, IEducationRepository
     public async Task<Education> FindByIdAsync(int EducationId)
     {
         return await _context.Educations
-            .Include(p => p.Driverprofile)
+            .Include(p => p.DriverProfile)
             .FirstOrDefaultAsync(p => p.Id == EducationId);
     }
     public async Task<Education> FindByDriverprofileIdAsync(int driverprofileid)

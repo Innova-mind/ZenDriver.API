@@ -1,8 +1,8 @@
 ﻿using ZenDriver.API.Security.Domain.Models;
 
-namespace ZenDriver.API.Message.Domain.Models
-{
-    public class Message
+namespace ZenDriver.API.Message.Domain.Models;
+
+    public abstract class Message
     {
         public int Id { get; set; }
         public string Content { get; set; }
@@ -14,4 +14,3 @@ namespace ZenDriver.API.Message.Domain.Models
         public User Receiver { get; set; }
 
     }
-}

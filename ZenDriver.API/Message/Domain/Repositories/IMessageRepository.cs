@@ -1,17 +1,16 @@
 ﻿using ZenDriver.API.Message.Domain.Models;
 
-namespace ZenDriver.API.Message.Domain.Repositories
+namespace ZenDriver.API.Message.Domain.Repositories;
+
+public interface IMessageRepository
 {
-    public interface IMessageRepository
-    {
-        Task<IEnumerable<Message>> GetMessagesAsync();
-    
-        Task AddMessageAsync(Message message);
+    Task<IEnumerable<Models.Message>> GetMessagesAsync();
 
-        Task<Message> FindMessageByIdAsync(int messageId);
-        
-        Task<IEnumerable<Message>> GetLastMessageRecruiter(int id);
+    Task AddMessageAsync(Models.Message message);
 
-        Task<IEnumerable<Message>> GetLastMessageDriver(int id);
-    }
+    Task<Models.Message> FindMessageByIdAsync(int messageId);
+
+    Task<IEnumerable<Models.Message>> GetLastMessageRecruiter(int id);
+
+    Task<IEnumerable<Models.Message>> GetLastMessageDriver(int id);
 }

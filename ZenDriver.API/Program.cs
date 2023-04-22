@@ -21,6 +21,10 @@ using ZenDriver.API.DriverProfile.Domain.Repositories;
 using ZenDriver.API.DriverProfile.Domain.Services;
 using ZenDriver.API.DriverProfile.Persistence.Repositories;
 using ZenDriver.API.DriverProfile.Services;
+using ZenDriver.API.SocialNetworking.Domain.Repositories;
+using ZenDriver.API.SocialNetworking.Domain.Services;
+using ZenDriver.API.SocialNetworking.Persistence.Repositories;
+using ZenDriver.API.SocialNetworking.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -121,7 +125,11 @@ builder.Services.AddAutoMapper(
     typeof(ZenDriver.API.Security.Mapping.ModelToResourceProfile),
     typeof(ZenDriver.API.Security.Mapping.ResourceToModelProfile),
     typeof(ZenDriver.API.DriverProfile.Mapping.ModelToResourceProfile),
-    typeof(ZenDriver.API.DriverProfile.Mapping.ResourceToModelProfile)
+    typeof(ZenDriver.API.DriverProfile.Mapping.ResourceToModelProfile),
+    typeof(ZenDriver.API.SocialNetworking.Mapping.ModelToResourceProfile),
+    typeof(ZenDriver.API.SocialNetworking.Mapping.ResourceToModelProfile),
+    typeof(ZenDriver.API.Settings.Mapping.ResourceToModelProfile),
+    typeof(ZenDriver.API.Settings.Mapping.ModelToResourceProfile)
     
     );
 

@@ -1,5 +1,7 @@
 using ZenDriver.API.Security.Domain.Models;
 using System.Text.Json.Serialization;
+using ZenDriver.API.DriverProfile.Domain.Models;
+
 namespace ZenDriver.API.Settings.Domain.Models;
 public class Education
 {
@@ -8,7 +10,7 @@ public class Education
 
     //Relationships
     public int DriverprofileId { get; set; }
-    public Driverprofile Driverprofile { get; set; }
+    public DriverProfile.Domain.Models.DriverProfile DriverProfile { get; set; }
 
     [JsonIgnore]
     public IList<School> Schooles { get; set; } = new List<School>();

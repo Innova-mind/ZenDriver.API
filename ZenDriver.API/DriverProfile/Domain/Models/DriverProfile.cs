@@ -1,7 +1,7 @@
-using ZenDriver.API.DriverProfile.Domain.Models;
+using ZenDriver.API.Settings.Domain.Models;
 
-namespace ZenDriver.API.DriverProfile.Domain.Communication.Models;
-public class Driverprofile
+namespace ZenDriver.API.DriverProfile.Domain.Models;
+public class DriverProfile
 {
     public int Id { get; set; }
     
@@ -12,5 +12,5 @@ public class Driverprofile
 
     public int LicenseId { get; set; }
     public License License { get; set; }
-    //public Education Education { get; set; }
+    public Education Education { get; set; }
 }

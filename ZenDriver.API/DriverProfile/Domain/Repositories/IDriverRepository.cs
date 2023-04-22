@@ -1,4 +1,4 @@
-using ZenDriver.API.DriverProfile.Domain.Communication.Models;
+using ZenDriver.API.DriverProfile.Domain.Models;
 
 namespace ZenDriver.API.DriverProfile.Domain.Repositories;
 public interface IDriverRepository

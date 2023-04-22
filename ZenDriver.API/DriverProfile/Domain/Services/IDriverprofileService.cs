@@ -1,12 +1,12 @@
-using ZenDriver.API.DriverProfile.Domain.Communication.Models;
+using ZenDriver.API.DriverProfile.Domain.Models;
 using ZenDriver.API.DriverProfile.Domain.Services.Communication;
 
 namespace ZenDriver.API.DriverProfile.Domain.Services;
 public interface IDriverprofileService
 {
-    Task<IEnumerable<Driverprofile>> ListAsync();
+    Task<IEnumerable<Models.DriverProfile>> ListAsync();
     
-    Task<DriverprofileResponse> SaveAsync(Driverprofile Driverprofile);
-    Task<DriverprofileResponse> UpdateAsync(int userId, Driverprofile Driverprofile);
+    Task<DriverprofileResponse> SaveAsync(Models.DriverProfile driverProfile);
+    Task<DriverprofileResponse> UpdateAsync(int userId, Models.DriverProfile driverProfile);
     Task<DriverprofileResponse> DeleteAsync(int userId);
 }

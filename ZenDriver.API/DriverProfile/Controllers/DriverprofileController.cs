@@ -6,7 +6,6 @@ using ZenDriver.API.DriverProfile.Domain.Services;
 using ZenDriver.API.DriverProfile.Resources;
 using ZenDriver.API.Shared.Extensions;
 using Microsoft.AspNetCore.Mvc;
-using ZenDriver.API.DriverProfile.Domain.Communication.Models;
 
 namespace ZenDriver.API.DriverProfile.Controllers;
 
@@ -27,7 +26,7 @@ public class DriverprofileController : ControllerBase
     public async Task<IEnumerable<DriverprofileResource>> GetAllAsync()
     {
         var Driverprofiles = await _DriverprofileService.ListAsync();
-        var resources = _mapper.Map<IEnumerable<Driverprofile>, IEnumerable<DriverprofileResource>>(Driverprofiles);
+        var resources = _mapper.Map<IEnumerable<Domain.Models.DriverProfile>, IEnumerable<DriverprofileResource>>(Driverprofiles);
         return resources;
     }
 
@@ -36,14 +35,14 @@ public class DriverprofileController : ControllerBase
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState.GetErrorMessages());
-        var Driverprofile = _mapper.Map<SaveDriverprofileResource, Driverprofile>(resource);
+        var Driverprofile = _mapper.Map<SaveDriverprofileResource, Domain.Models.DriverProfile>(resource);
 
         var result = await _DriverprofileService.SaveAsync(Driverprofile);
 
         if (!result.Success)
             return BadRequest(result.Message);
 
-        var DriverprofileResource = _mapper.Map<Driverprofile, DriverprofileResource>(result.Resource);
+        var DriverprofileResource = _mapper.Map<Domain.Models.DriverProfile, DriverprofileResource>(result.Resource);
 
         return Ok(Driverprofile);
     }
@@ -54,14 +53,14 @@ public class DriverprofileController : ControllerBase
         if (!ModelState.IsValid)
             return BadRequest(ModelState.GetErrorMessages());
 
-        var Driverprofile = _mapper.Map<SaveDriverprofileResource, Driverprofile>(resource);
+        var Driverprofile = _mapper.Map<SaveDriverprofileResource, Domain.Models.DriverProfile>(resource);
 
         var result = await _DriverprofileService.UpdateAsync(id, Driverprofile);
 
         if (!result.Success)
             return BadRequest(result.Message);
 
-        var DriverprofileResource = _mapper.Map<Driverprofile, DriverprofileResource>(result.Resource);
+        var DriverprofileResource = _mapper.Map<Domain.Models.DriverProfile, DriverprofileResource>(result.Resource);
 
         return Ok(DriverprofileResource);
     }
@@ -74,7 +73,7 @@ public class DriverprofileController : ControllerBase
         if (!result.Success)
             return BadRequest(result.Message);
 
-        var DriverprofileResource = _mapper.Map<Driverprofile, DriverprofileResource>(result.Resource);
+        var DriverprofileResource = _mapper.Map<Domain.Models.DriverProfile, DriverprofileResource>(result.Resource);
         return Ok(DriverprofileResource);
     }
 }

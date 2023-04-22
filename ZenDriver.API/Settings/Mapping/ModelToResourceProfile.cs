@@ -8,16 +8,6 @@ public class ModelToResourceProfile :Profile
 {
     public ModelToResourceProfile()
     {
-        CreateMap<SocialNetwork, SocialNetworkResource>();
-        CreateMap<Address, AddressResource>();
-        CreateMap<Company, CompanyResource>();
-        CreateMap<Post, PostResource>();
-        CreateMap<Recruiter, RecruiterResource>();
-        CreateMap<Message, MessageResource>();
-        CreateMap<Notification, NotificationResource>();
-        CreateMap<Driver, DriverResource>();
-        CreateMap<Driverprofile, DriverprofileResource>();
-        CreateMap<License, LicenseResource>();
         CreateMap<Education, EducationResource>();
         CreateMap<School, SchoolResource>();
     }
