@@ -13,6 +13,10 @@ using ZenDriver.API.Shared.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using ZenDriver.API.ApplyForJob.Domain.Repositories;
+using ZenDriver.API.ApplyForJob.Domain.Services;
+using ZenDriver.API.ApplyForJob.Persistence.Repositories;
+using ZenDriver.API.ApplyForJob.Services;
 using ZenDriver.API.DriverProfile.Domain.Repositories;
 using ZenDriver.API.DriverProfile.Domain.Services;
 using ZenDriver.API.DriverProfile.Persistence.Repositories;
@@ -97,6 +101,11 @@ builder.Services.AddRouting(options => options.LowercaseUrls = true);
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
+// InnovaMind Injection Configuration
+builder.Services.AddScoped<IAddressRepository, AddressRepository>();
+builder.Services.AddScoped<IAddressService, AddressService>();
+builder.Services.AddScoped<ISocialNetworkRepository, SocialNetworkRepository>();
+builder.Services.AddScoped<ISocialNetworkService, SocialNetworkService>();
 
 // Security Injection Configuration
 

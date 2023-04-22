@@ -1,4 +1,6 @@
 ﻿using System.Text.Json.Serialization;
+using ZenDriver.API.ApplyForJob.Domain.Models;
+using ZenDriver.API.DriverProfile.Domain.Communication.Models;
 
 namespace ZenDriver.API.Security.Domain.Models;
 public class User
@@ -14,5 +16,22 @@ public class User
 
     [JsonIgnore]
     public string PasswordHash { get; set; }
+
+    [JsonIgnore]
+    public IList<SocialNetwork> SocialNetworks { get; set; } = new List<SocialNetwork>();
+
+    [JsonIgnore]
+    public IList<Address> Addresses { get; set; } = new List<Address>();
+
+    // [JsonIgnore]
+    // public IList<Message> EmittedMessages { get; set; } = new List<Message>();
+    //
+    // [JsonIgnore]
+    // public IList<Message> ReceivedMessages { get; set; } = new List<Message>();
+    
+    public IList<Address> Address { get; set; } = new List<Address>();
+    // public IList<Notification> Notifications { get; set; }
+    [JsonIgnore]
+    public Driver Driver { get; set; } 
 
 }
