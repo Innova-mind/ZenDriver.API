@@ -129,9 +129,15 @@ builder.Services.AddAutoMapper(
     typeof(ZenDriver.API.SocialNetworking.Mapping.ModelToResourceProfile),
     typeof(ZenDriver.API.SocialNetworking.Mapping.ResourceToModelProfile),
     typeof(ZenDriver.API.Settings.Mapping.ResourceToModelProfile),
-    typeof(ZenDriver.API.Settings.Mapping.ModelToResourceProfile)
+    typeof(ZenDriver.API.Settings.Mapping.ModelToResourceProfile),
+    typeof(ZenDriver.API.ApplyForJob.Mapping.ModelToResourceProfile),
+    typeof(ZenDriver.API.ApplyForJob.Mapping.ResourceToModelProfile),
+    typeof(ZenDriver.API.Message.Mapping.ModelToResourceProfile),
+    typeof(ZenDriver.API.Message.Mapping.ResourceToModelProfile),
+    typeof(ZenDriver.API.Notification.Mapping.ModelToResourceProfile),
+    typeof(ZenDriver.API.Notification.Mapping.ResourceToModelProfile)
     
-    );
+);
 
 var app = builder.Build();
 
