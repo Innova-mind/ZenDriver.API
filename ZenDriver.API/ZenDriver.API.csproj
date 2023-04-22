@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <Folder Include="Security\Exceptions\" />
+    <Folder Include="SocialNetworking" />
   </ItemGroup>
 
 </Project>
