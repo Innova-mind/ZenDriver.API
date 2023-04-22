@@ -1,4 +1,3 @@
-using ZenDriver.API.DriverProfile.Domain.Communication.Models;
 using ZenDriver.API.DriverProfile.Domain.Repositories;
 using ZenDriver.API.DriverProfile.Domain.Services;
 using ZenDriver.API.DriverProfile.Domain.Models;

@@ -24,4 +24,20 @@
     <Folder Include="Security\Exceptions\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Message\Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Message\Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Message\Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Message\Models\**" />
+  </ItemGroup>
+
 </Project>

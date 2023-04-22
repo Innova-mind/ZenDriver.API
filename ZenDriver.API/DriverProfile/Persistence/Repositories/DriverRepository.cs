@@ -3,7 +3,6 @@ using ZenDriver.API.DriverProfile.Domain.Repositories;
 using ZenDriver.API.Shared.Persistence.Contexts;
 using ZenDriver.API.Shared.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
-using ZenDriver.API.DriverProfile.Domain.Communication.Models;
 
 namespace ZenDriver.API.DriverProfile.Domain.Models.Persistence.Repositories;
 public class DriverRepository : BaseRepository, IDriverRepository

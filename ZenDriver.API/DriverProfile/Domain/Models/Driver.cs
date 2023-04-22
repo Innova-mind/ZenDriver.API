@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using ZenDriver.API.Security.Domain.Models;
 
-namespace ZenDriver.API.DriverProfile.Domain.Communication.Models;
+namespace ZenDriver.API.DriverProfile.Domain.Models;
 public class Driver
 {
     public int Id { get; set; }
@@ -10,5 +10,5 @@ public class Driver
     public int UserId { get; set; }
     public User User { get; set; }
     [JsonIgnore]
-    public Driverprofile Driverprofile { get; set; }
+    public DriverProfile DriverProfile { get; set; }
 }

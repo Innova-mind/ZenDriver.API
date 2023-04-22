@@ -13,10 +13,18 @@ using ZenDriver.API.Shared.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using ZenDriver.API.ApplyForJob.Domain.Repositories;
+using ZenDriver.API.ApplyForJob.Domain.Services;
+using ZenDriver.API.ApplyForJob.Persistence.Repositories;
+using ZenDriver.API.ApplyForJob.Services;
 using ZenDriver.API.DriverProfile.Domain.Repositories;
 using ZenDriver.API.DriverProfile.Domain.Services;
 using ZenDriver.API.DriverProfile.Persistence.Repositories;
 using ZenDriver.API.DriverProfile.Services;
+using ZenDriver.API.SocialNetworking.Domain.Repositories;
+using ZenDriver.API.SocialNetworking.Domain.Services;
+using ZenDriver.API.SocialNetworking.Persistence.Repositories;
+using ZenDriver.API.SocialNetworking.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -97,6 +105,11 @@ builder.Services.AddRouting(options => options.LowercaseUrls = true);
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
+// InnovaMind Injection Configuration
+builder.Services.AddScoped<IAddressRepository, AddressRepository>();
+builder.Services.AddScoped<IAddressService, AddressService>();
+builder.Services.AddScoped<ISocialNetworkRepository, SocialNetworkRepository>();
+builder.Services.AddScoped<ISocialNetworkService, SocialNetworkService>();
 
 // Security Injection Configuration
 
@@ -112,9 +125,19 @@ builder.Services.AddAutoMapper(
     typeof(ZenDriver.API.Security.Mapping.ModelToResourceProfile),
     typeof(ZenDriver.API.Security.Mapping.ResourceToModelProfile),
     typeof(ZenDriver.API.DriverProfile.Mapping.ModelToResourceProfile),
-    typeof(ZenDriver.API.DriverProfile.Mapping.ResourceToModelProfile)
+    typeof(ZenDriver.API.DriverProfile.Mapping.ResourceToModelProfile),
+    typeof(ZenDriver.API.SocialNetworking.Mapping.ModelToResourceProfile),
+    typeof(ZenDriver.API.SocialNetworking.Mapping.ResourceToModelProfile),
+    typeof(ZenDriver.API.Settings.Mapping.ResourceToModelProfile),
+    typeof(ZenDriver.API.Settings.Mapping.ModelToResourceProfile),
+    typeof(ZenDriver.API.ApplyForJob.Mapping.ModelToResourceProfile),
+    typeof(ZenDriver.API.ApplyForJob.Mapping.ResourceToModelProfile),
+    typeof(ZenDriver.API.Message.Mapping.ModelToResourceProfile),
+    typeof(ZenDriver.API.Message.Mapping.ResourceToModelProfile),
+    typeof(ZenDriver.API.Notification.Mapping.ModelToResourceProfile),
+    typeof(ZenDriver.API.Notification.Mapping.ResourceToModelProfile)
     
-    );
+);
 
 var app = builder.Build();
 

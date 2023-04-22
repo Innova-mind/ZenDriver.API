@@ -1,6 +1,4 @@
 
-using ZenDriver.API.DriverProfile.Domain.Communication.Models;
-
 namespace ZenDriver.API.DriverProfile.Domain.Models;
 public class License
 {
@@ -10,6 +8,6 @@ public class License
     public string Description { get; set; }
 
     //Relationships
-    public Driverprofile Driverprofile { get; set; }
+    public DriverProfile DriverProfile { get; set; }
 
 }

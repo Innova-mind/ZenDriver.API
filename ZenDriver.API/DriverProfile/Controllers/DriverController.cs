@@ -1,12 +1,9 @@
 using AutoMapper;
-using ZenDriver.API.DriverProfile.Domain.Communication.Models;
-using ZenDriver.API.DriverProfile.Domain.Services;
-using ZenDriver.API.DriverProfile.Resources;
-using ZenDriver.API.DriverProfile.Domain.Models;
 using ZenDriver.API.DriverProfile.Domain.Services;
 using ZenDriver.API.DriverProfile.Resources;
 using ZenDriver.API.Shared.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using ZenDriver.API.DriverProfile.Domain.Models;
 using ZenDriver.API.Shared.Extensions;
 
 namespace ZenDriver.API.DriverProfile.Controllers;

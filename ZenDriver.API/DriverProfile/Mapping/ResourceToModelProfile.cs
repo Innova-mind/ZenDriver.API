@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using ZenDriver.API.DriverProfile.Domain.Communication.Models;
 using ZenDriver.API.DriverProfile.Resources;
 using ZenDriver.API.DriverProfile.Domain.Models;
 using ZenDriver.API.DriverProfile.Resources;
@@ -10,6 +9,6 @@ public class ResourceToModelProfile : Profile
     public ResourceToModelProfile()
     {
         CreateMap<SaveDriverResource, Driver> ();
-        CreateMap<SaveDriverprofileResource, Driverprofile> ();
+        CreateMap<SaveDriverprofileResource, Domain.Models.DriverProfile> ();
     }
 }
