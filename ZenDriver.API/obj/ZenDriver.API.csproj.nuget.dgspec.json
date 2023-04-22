@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Desktop\\7mo ciclo\\Moviles\\TF\\CODE\\ZenDriver.API\\ZenDriver.API.csproj": {}
+    "/home/zen/RiderProjects/ZenDriver.API/ZenDriver.API/ZenDriver.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Desktop\\7mo ciclo\\Moviles\\TF\\CODE\\ZenDriver.API\\ZenDriver.API.csproj": {
+    "/home/zen/RiderProjects/ZenDriver.API/ZenDriver.API/ZenDriver.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\7mo ciclo\\Moviles\\TF\\CODE\\ZenDriver.API\\ZenDriver.API.csproj",
+        "projectUniqueName": "/home/zen/RiderProjects/ZenDriver.API/ZenDriver.API/ZenDriver.API.csproj",
         "projectName": "ZenDriver.API",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\7mo ciclo\\Moviles\\TF\\CODE\\ZenDriver.API\\ZenDriver.API.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\7mo ciclo\\Moviles\\TF\\CODE\\ZenDriver.API\\obj\\",
+        "projectPath": "/home/zen/RiderProjects/ZenDriver.API/ZenDriver.API/ZenDriver.API.csproj",
+        "packagesPath": "/home/zen/.nuget/packages/",
+        "outputPath": "/home/zen/RiderProjects/ZenDriver.API/ZenDriver.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/zen/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -96,6 +94,16 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.14, 6.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.14, 6.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -104,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.103/RuntimeIdentifierGraph.json"
         }
       }
     }
