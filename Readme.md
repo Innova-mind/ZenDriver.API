@@ -4,7 +4,7 @@ La API de Conductores y Empresas de Transporte es una REST API construida en C# 
 
 ## Endpoints Disponibles
 
-[![Azure Deployment](https://github.com/Innova-mind/ZenDriver.API/blob/main/endpoints.png)](https://innovamind.azurewebsites.net/swagger/index.html)
+[![Azure Deployment](https://github.com/Innova-mind/ZenDriver.API/blob/main/end-points.png)](https://innovamind.azurewebsites.net/swagger/index.html)
 
 
 ## Respuestas
