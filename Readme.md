@@ -2,9 +2,10 @@
 
 La API de Conductores y Empresas de Transporte es una REST API construida en C# utilizando el framework .NET 6. Esta API permite a los usuarios consultar información relacionada con conductores y empresas del rubro de transporte.
 
-## Endpoints Disponibles
+## Ejemplo de Endpoints Disponibles
 
 [![Azure Deployment](https://github.com/Innova-mind/ZenDriver.API/blob/main/end-points.png)](https://innovamind.azurewebsites.net/swagger/index.html)
+[Endpoints Disponibles](https://innovamind.azurewebsites.net/swagger/index.html)
 
 
 ## Respuestas
