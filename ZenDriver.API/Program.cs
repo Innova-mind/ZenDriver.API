@@ -17,10 +17,23 @@ using ZenDriver.API.ApplyForJob.Domain.Repositories;
 using ZenDriver.API.ApplyForJob.Domain.Services;
 using ZenDriver.API.ApplyForJob.Persistence.Repositories;
 using ZenDriver.API.ApplyForJob.Services;
+using ZenDriver.API.DriverProfile.Domain.Models.Persistence.Repositories;
 using ZenDriver.API.DriverProfile.Domain.Repositories;
 using ZenDriver.API.DriverProfile.Domain.Services;
 using ZenDriver.API.DriverProfile.Persistence.Repositories;
 using ZenDriver.API.DriverProfile.Services;
+using ZenDriver.API.Message.Domain.Repositories;
+using ZenDriver.API.Message.Domain.Services;
+using ZenDriver.API.Message.Persistence.Repositories;
+using ZenDriver.API.Message.Services;
+using ZenDriver.API.Notification.Domain.Repositories;
+using ZenDriver.API.Notification.Domain.Services;
+using ZenDriver.API.Notification.Persistence.Repositories;
+using ZenDriver.API.Notification.Services;
+using ZenDriver.API.Settings.Domain.Repositories;
+using ZenDriver.API.Settings.Domain.Services;
+using ZenDriver.API.Settings.Persistence.Repositories;
+using ZenDriver.API.Settings.Services;
 using ZenDriver.API.SocialNetworking.Domain.Repositories;
 using ZenDriver.API.SocialNetworking.Domain.Services;
 using ZenDriver.API.SocialNetworking.Persistence.Repositories;
@@ -108,8 +121,35 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 // InnovaMind Injection Configuration
 builder.Services.AddScoped<IAddressRepository, AddressRepository>();
 builder.Services.AddScoped<IAddressService, AddressService>();
+builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
+builder.Services.AddScoped<ICompanyService, CompanyService>();
+//builder.Services.AddScoped<IPostRepository, PostRepository>();
+//builder.Services.AddScoped<IPostService, PostService>();
+// builder.Services.AddScoped<IRecruiterRepository, RecruiterRepository>();
+// builder.Services.AddScoped<IRecruiterService, RecruiterService>();
+builder.Services.AddScoped<IDriverprofileService, DriverprofileService>();
+builder.Services.AddScoped<IDriverprofileRepository, DriverprofileRepository>();
+builder.Services.AddScoped<IDriverRepository, DriverRepository>();
+builder.Services.AddScoped<IDriverService, DriverService>();
+builder.Services.AddScoped<ILicenseRepository, LicenseRepository>();
+builder.Services.AddScoped<ILicenseService, LicenseService>();
+
+builder.Services.AddScoped<IMessageRepository, MessageRepository>();
+builder.Services.AddScoped<IMessageService, MessageService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
+
+builder.Services.AddScoped<IEducationRepository, EducationRepository>();
+builder.Services.AddScoped<IEducationService, EducationService>();
+builder.Services.AddScoped<ISchoolRepository, SchoolRepository>();
+builder.Services.AddScoped<ISchoolService, SchoolService>();
 builder.Services.AddScoped<ISocialNetworkRepository, SocialNetworkRepository>();
 builder.Services.AddScoped<ISocialNetworkService, SocialNetworkService>();
+
+
+
+
+
 
 // Security Injection Configuration
 
