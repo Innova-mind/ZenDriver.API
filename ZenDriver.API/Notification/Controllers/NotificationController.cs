@@ -8,7 +8,7 @@ using ZenDriver.API.Notification.Resources;
 namespace ZenDriver.API.Notification.Controllers;
 
 [ApiController]
-[Route("api/v1/{userid}/[controller]")]
+[Route("api/v1/[controller]/{userid}")]
 public class NotificationController: ControllerBase
 {
     private readonly INotificationService _notificationService;
