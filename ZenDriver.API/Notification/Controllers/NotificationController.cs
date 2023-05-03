@@ -24,7 +24,7 @@ public class NotificationController: ControllerBase
     public async Task<IEnumerable<NotificationResource>> GetAllNotificationsAsync(int userid)
     {
         var notifications = await _notificationService.GetNotificationsAsync();
-        var resources = _mapper.Map<IEnumerable<Domain.Models.Notification>, IEnumerable<NotificationResource>>(notifications);
+        var resources = _mapper.Map<IEnumerable<NotificationZenDriver>, IEnumerable<NotificationResource>>(notifications);
         resources = resources.Where(x => (x.Receiver.Id == userid) ).ToList();
         return resources;
     }
@@ -35,14 +35,14 @@ public class NotificationController: ControllerBase
         if (!ModelState.IsValid)
             return BadRequest(ModelState.GetErrorMessages());
 
-        var notification = _mapper.Map<SaveNotificationResource, Domain.Models.Notification>(resource);
+        var notification = _mapper.Map<SaveNotificationResource, NotificationZenDriver>(resource);
 
         var result = await _notificationService.AddNotificationAsync(notification);
 
         if (!result.Success)
             return BadRequest(result.Message);
 
-        var notificationResource = _mapper.Map<Domain.Models.Notification, NotificationResource>(result.Resource);
+        var notificationResource = _mapper.Map<NotificationZenDriver, NotificationResource>(result.Resource);
 
         return Ok(notificationResource);
     }
@@ -54,7 +54,7 @@ public class NotificationController: ControllerBase
         if (!result.Success)
             return BadRequest(result.Message);
         
-        var notificationResource = _mapper.Map<Domain.Models.Notification, NotificationResource>(result.Resource);
+        var notificationResource = _mapper.Map<NotificationZenDriver, NotificationResource>(result.Resource);
         return Ok(notificationResource);
     }
     

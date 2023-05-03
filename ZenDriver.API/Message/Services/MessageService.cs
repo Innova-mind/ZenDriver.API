@@ -19,12 +19,12 @@ public class MessageService : IMessageService
         _userRepository = userRepository;
     }
 
-    public async Task<IEnumerable<Domain.Models.Message>> GetMessagesAsync()
+    public async Task<IEnumerable<MessageZenDriver>> GetMessagesAsync()
     {
         return await _messageRepository.GetMessagesAsync();
     }
 
-    public async Task<MessageResponse> AddMessageAsync(Domain.Models.Message message)
+    public async Task<MessageResponse> AddMessageAsync(MessageZenDriver message)
     {
         var existingUser = await _userRepository.FindByIdAsync(message.EmitterId);
 

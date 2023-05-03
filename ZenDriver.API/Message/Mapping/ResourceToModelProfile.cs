@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ZenDriver.API.Message.Domain.Models;
 using ZenDriver.API.Message.Resources;
 using ZenDriver.API.Settings.Domain.Models;
 using ZenDriver.API.Settings.Resources;
@@ -8,6 +9,6 @@ public class ResourceToModelProfile : Profile
 {
     public ResourceToModelProfile()
     {
-        CreateMap<SaveMessageResource, Domain.Models.Message> ();
+        CreateMap<SaveMessageResource, MessageZenDriver> ();
     }
 }

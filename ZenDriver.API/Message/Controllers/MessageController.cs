@@ -24,7 +24,7 @@ public class MessageController : ControllerBase
     public async Task<IEnumerable<MessageResource>> GetAllMessagesAsync()
     {
         var messages = await _messageService.GetMessagesAsync();
-        var resources = _mapper.Map<IEnumerable<Domain.Models.Message>, IEnumerable<MessageResource>>(messages);
+        var resources = _mapper.Map<IEnumerable<MessageZenDriver>, IEnumerable<MessageResource>>(messages);
 
         return resources;
     }
@@ -35,14 +35,14 @@ public class MessageController : ControllerBase
         if (!ModelState.IsValid)
             return BadRequest(ModelState.GetErrorMessages());
 
-        var message = _mapper.Map<SaveMessageResource, Domain.Models.Message>(resource);
+        var message = _mapper.Map<SaveMessageResource, MessageZenDriver>(resource);
 
         var result = await _messageService.AddMessageAsync(message);
 
         if (!result.Success)
             return BadRequest(result.Message);
 
-        var messageResource = _mapper.Map<Domain.Models.Message, MessageResource>(result.Resource);
+        var messageResource = _mapper.Map<MessageZenDriver, MessageResource>(result.Resource);
 
         return Ok(messageResource);
     }

@@ -2,8 +2,9 @@
 
 namespace ZenDriver.API.Message.Domain.Models;
 
-    public abstract class Message
+    public class MessageZenDriver
     {
+        
         public int Id { get; set; }
         public string Content { get; set; }
 
