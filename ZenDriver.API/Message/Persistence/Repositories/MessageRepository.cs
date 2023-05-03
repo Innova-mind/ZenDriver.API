@@ -39,5 +39,11 @@ namespace ZenDriver.API.Message.Persistence.Repositories
             var lastMessage = await _context.Messages.FromSqlInterpolated($"SELECT * FROM messages m WHERE id IN (SELECT MAX(id) FROM messages WHERE receiver_id = {id} GROUP BY emitter_id)").Include(p => p.Emitter).ToListAsync();
             return lastMessage;
         }
+
+        public async Task<IEnumerable<MessageZenDriver>> GetMessagesByEmitterIdAsync(int emitterId)
+        {
+            var messages = await _context.Messages.Where(p => p.EmitterId == emitterId).ToListAsync();
+            return messages;
+        }
     }
 }

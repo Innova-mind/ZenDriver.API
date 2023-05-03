@@ -7,7 +7,6 @@ namespace ZenDriver.API.Message.Domain.Models;
         
         public int Id { get; set; }
         public string Content { get; set; }
-
         public int EmitterId { get; set; }
         public User Emitter { get; set; }
 

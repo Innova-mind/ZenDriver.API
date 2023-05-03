@@ -46,6 +46,18 @@ public class MessageService : IMessageService
             return new MessageResponse($"An error ocurred while saving the tutorial: {e.Message}");
         }
     }
+
+    public async Task<IEnumerable<MessageZenDriver>> GetMessagesByEmitterIdAsync(int emitterId)
+    {
+        try
+        {
+            return await _messageRepository.GetMessagesByEmitterIdAsync(emitterId);
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
+    }
 }
 
 

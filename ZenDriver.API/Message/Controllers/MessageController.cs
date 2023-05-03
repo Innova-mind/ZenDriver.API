@@ -28,6 +28,15 @@ public class MessageController : ControllerBase
 
         return resources;
     }
+    
+    [HttpGet("{emitterId}")]
+    public async Task<IEnumerable<MessageResource>> GetMessagesByEmitterIdAsync(int emitterId)
+    {
+        var messages = await _messageService.GetMessagesByEmitterIdAsync(emitterId);
+        var resources = _mapper.Map<IEnumerable<MessageZenDriver>, IEnumerable<MessageResource>>(messages);
+
+        return resources;
+    }
 
     [HttpPost]
     public async Task<IActionResult> AddMessageAsync([FromBody] SaveMessageResource resource)
