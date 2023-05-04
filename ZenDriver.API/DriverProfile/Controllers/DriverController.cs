@@ -28,7 +28,20 @@ public class DriverController : ControllerBase
         var resources = _mapper.Map<IEnumerable<Driver>, IEnumerable<DriverResource>>(Drivers);
         return resources;
     }
+    
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetAsync(int id)
+    {
+        var result = await _DriverService.GetByIdAsync(id);
 
+        if (!result.Success)
+            return BadRequest(result.Message);
+
+        var DriverResource = _mapper.Map<Driver, DriverResource>(result.Resource);
+        return Ok(DriverResource);
+    }
+    
+    
     [HttpPost]
     public async Task<IActionResult> PostAsync([FromBody] SaveDriverResource resource)
     {

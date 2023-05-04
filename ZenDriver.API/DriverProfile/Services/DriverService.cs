@@ -23,6 +23,12 @@ public class DriverService : IDriverService
         return await _DriverRepository.ListAsync();
     }
 
+    public async Task<DriverResponse> GetByIdAsync(int id)
+    {
+        var driver = await _DriverRepository.FindByIdAsync(id);
+        return new DriverResponse(driver);
+    }
+
     public async Task<DriverResponse> SaveAsync(Driver Driver)
     {
         try
