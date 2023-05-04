@@ -29,6 +29,18 @@ public class DriverprofileController : ControllerBase
         var resources = _mapper.Map<IEnumerable<Domain.Models.DriverProfile>, IEnumerable<DriverprofileResource>>(Driverprofiles);
         return resources;
     }
+    
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetAsync(int id)
+    {
+        var result = await _DriverprofileService.GetByIdAsync(id);
+
+        if (!result.Success)
+            return BadRequest(result.Message);
+
+        var DriverprofileResource = _mapper.Map<Domain.Models.DriverProfile, DriverprofileResource>(result.Resource);
+        return Ok(DriverprofileResource);
+    }
 
     [HttpPost]
     public async Task<IActionResult> PostAsync([FromBody] SaveDriverprofileResource resource)
