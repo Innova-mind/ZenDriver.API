@@ -142,6 +142,7 @@ public class AppDbContext : DbContext
         builder.Entity<MessageZenDriver>().HasKey(p => p.Id);
         builder.Entity<MessageZenDriver>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
         builder.Entity<MessageZenDriver>().Property(p => p.Content).IsRequired();
+        builder.Entity<MessageZenDriver>().Property(p => p.CreatedAt).IsRequired();
         //Relations
         builder.Entity<MessageZenDriver>()
             .HasOne(p => p.Emitter)

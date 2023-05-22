@@ -47,11 +47,23 @@ public class MessageService : IMessageService
         }
     }
 
-    public async Task<IEnumerable<MessageZenDriver>> GetMessagesByEmitterIdAsync(int emitterId)
+    public async Task<IEnumerable<MessageZenDriver>?> GetMessagesByEmitterIdAsync(int emitterId)
     {
         try
         {
             return await _messageRepository.GetMessagesByEmitterIdAsync(emitterId);
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
+    }
+
+    public async Task<IEnumerable<MessageZenDriver>?> GetMessagesByEmitterReceiverIdAsync(int emitterId, int receiverId)
+    {
+        try
+        {
+            return await _messageRepository.GetMessagesByEmitterIdReceiverIdAsync(emitterId, receiverId);
         }
         catch (Exception e)
         {

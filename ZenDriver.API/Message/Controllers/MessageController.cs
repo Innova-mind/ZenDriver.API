@@ -29,7 +29,7 @@ public class MessageController : ControllerBase
         return resources;
     }
     
-    [HttpGet("{emitterId}")]
+    [HttpGet("search-by-id/{emitterId}")]
     public async Task<IEnumerable<MessageResource>> GetMessagesByEmitterIdAsync(int emitterId)
     {
         var messages = await _messageService.GetMessagesByEmitterIdAsync(emitterId);
@@ -37,12 +37,23 @@ public class MessageController : ControllerBase
 
         return resources;
     }
+    [HttpGet("search-by-emitter-receiver/{emitterId}/{receiverId}")]
+    public async Task<IEnumerable<MessageResource>?> GetMessagesByEmitterReceiverIdAsync(int emitterId, int receiverId)
+    {
+        var messages = await _messageService.GetMessagesByEmitterReceiverIdAsync(emitterId, receiverId);
+        if (messages == null) return null;
+        var resources = _mapper.Map<IEnumerable<MessageZenDriver>, IEnumerable<MessageResource>>(messages);
 
-    [HttpPost]
+        return resources;
+    }
+
+    [HttpPost("add-message")]
     public async Task<IActionResult> AddMessageAsync([FromBody] SaveMessageResource resource)
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState.GetErrorMessages());
+        
+        resource.CreatedAt = DateTime.Now;
 
         var message = _mapper.Map<SaveMessageResource, MessageZenDriver>(resource);
 

@@ -40,9 +40,20 @@ namespace ZenDriver.API.Message.Persistence.Repositories
             return lastMessage;
         }
 
-        public async Task<IEnumerable<MessageZenDriver>> GetMessagesByEmitterIdAsync(int emitterId)
+        public async Task<IEnumerable<MessageZenDriver>?> GetMessagesByEmitterIdAsync(int emitterId)
         {
-            var messages = await _context.Messages.Where(p => p.EmitterId == emitterId).ToListAsync();
+            var messages = await _context.Messages.Where(p => p.EmitterId == emitterId)
+                .Include(x=>x.Emitter)
+                .Include(x=>x.Receiver).ToListAsync();
+            return messages;
+        }
+
+        public async Task<IEnumerable<MessageZenDriver>?> GetMessagesByEmitterIdReceiverIdAsync(int emitterId, int receiverId)
+        {
+            var messages = await _context.Messages.Where(p => p.EmitterId == emitterId && p.ReceiverId == receiverId)
+                .Include(x=>x.Emitter)
+                .Include(x=>x.Receiver)
+                .OrderBy(x=>x.CreatedAt).ToListAsync();
             return messages;
         }
     }

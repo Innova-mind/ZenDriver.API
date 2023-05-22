@@ -12,4 +12,6 @@ public class SaveMessageResource
 
     [Required]
     public string Content { get; set; }
+    [Required]
+    public DateTime CreatedAt { get; set; }
 }
