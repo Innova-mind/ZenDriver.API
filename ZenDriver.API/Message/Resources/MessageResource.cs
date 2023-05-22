@@ -8,5 +8,6 @@ namespace ZenDriver.API.Message.Resources
         public string Content { get; set; }
         public User Emitter { get; set; }
         public User Receiver { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

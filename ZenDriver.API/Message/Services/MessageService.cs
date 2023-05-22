@@ -19,12 +19,12 @@ public class MessageService : IMessageService
         _userRepository = userRepository;
     }
 
-    public async Task<IEnumerable<Domain.Models.Message>> GetMessagesAsync()
+    public async Task<IEnumerable<MessageZenDriver>> GetMessagesAsync()
     {
         return await _messageRepository.GetMessagesAsync();
     }
 
-    public async Task<MessageResponse> AddMessageAsync(Domain.Models.Message message)
+    public async Task<MessageResponse> AddMessageAsync(MessageZenDriver message)
     {
         var existingUser = await _userRepository.FindByIdAsync(message.EmitterId);
 
@@ -44,6 +44,30 @@ public class MessageService : IMessageService
         {
             //Error Handling
             return new MessageResponse($"An error ocurred while saving the tutorial: {e.Message}");
+        }
+    }
+
+    public async Task<IEnumerable<MessageZenDriver>?> GetMessagesByEmitterIdAsync(int emitterId)
+    {
+        try
+        {
+            return await _messageRepository.GetMessagesByEmitterIdAsync(emitterId);
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
+    }
+
+    public async Task<IEnumerable<MessageZenDriver>?> GetMessagesByEmitterReceiverIdAsync(int emitterId, int receiverId)
+    {
+        try
+        {
+            return await _messageRepository.GetMessagesByEmitterIdReceiverIdAsync(emitterId, receiverId);
+        }
+        catch (Exception e)
+        {
+            return null;
         }
     }
 }

@@ -20,12 +20,12 @@ public class NotificationService : INotificationService
         _userRepository = userRepository;
     }
 
-    public async Task<IEnumerable<Domain.Models.Notification>> GetNotificationsAsync()
+    public async Task<IEnumerable<NotificationZenDriver>> GetNotificationsAsync()
     {
         return await _notificationRepository.GetNotificationsAsync();
     }
     
-    public async Task<NotificationResponse> AddNotificationAsync(Domain.Models.Notification notification)
+    public async Task<NotificationResponse> AddNotificationAsync(NotificationZenDriver notification)
     {
         var existingUser = await _userRepository.FindByIdAsync(notification.EmitterId);
 

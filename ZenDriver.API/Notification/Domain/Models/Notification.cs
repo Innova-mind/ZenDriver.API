@@ -1,7 +1,7 @@
 ﻿using ZenDriver.API.Security.Domain.Models;
 namespace ZenDriver.API.Notification.Domain.Models;
 
-public class Notification
+public class NotificationZenDriver
 {
     public int Id { get; set; }
     public string Content { get; set; }

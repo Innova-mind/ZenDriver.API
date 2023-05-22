@@ -1,5 +1,7 @@
 ﻿using ZenDriver.API.Shared.Extensions;
 using Microsoft.EntityFrameworkCore;
+using ZenDriver.API.Message.Domain.Models;
+using ZenDriver.API.Notification.Domain.Models;
 using ZenDriver.API.Security.Domain.Models;
 using ZenDriver.API.Settings.Domain.Models;
 using Address = ZenDriver.API.ApplyForJob.Domain.Models.Address;
@@ -10,7 +12,6 @@ using Post = ZenDriver.API.ApplyForJob.Domain.Models.Post;
 using Recruiter = ZenDriver.API.ApplyForJob.Domain.Models.Recruiter;
 using SocialNetwork = ZenDriver.API.SocialNetworking.Domain.Models.SocialNetwork;
 using DriverProfile = ZenDriver.API.DriverProfile.Domain.Models.DriverProfile;
-using Message = ZenDriver.API.Message.Domain.Models.Message;
 
 namespace ZenDriver.API.Shared.Persistence.Contexts;
 
@@ -35,9 +36,9 @@ public class AppDbContext : DbContext
     public DbSet<Recruiter> Recruiters { get; set; }
     public DbSet<Post> Posts { get; set; }
     
-    public DbSet<Message.Domain.Models.Message> Messages { get; set; }
+    public DbSet<MessageZenDriver> Messages { get; set; }
     
-    public DbSet<Notification.Domain.Models.Notification> Notifications { get; set; }
+    public DbSet<NotificationZenDriver> Notifications { get; set; }
 
     public AppDbContext(DbContextOptions options) : base (options)
     {
@@ -137,18 +138,19 @@ public class AppDbContext : DbContext
         builder.Entity<User>().Property(p => p.ImageUrl);
         
         //Messages
-        builder.Entity<Message.Domain.Models.Message>().ToTable("Messages");
-        builder.Entity<Message.Domain.Models.Message>().HasKey(p => p.Id);
-        builder.Entity<Message.Domain.Models.Message>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-        builder.Entity<Message.Domain.Models.Message>().Property(p => p.Content).IsRequired();
+        builder.Entity<MessageZenDriver>().ToTable("Messages");
+        builder.Entity<MessageZenDriver>().HasKey(p => p.Id);
+        builder.Entity<MessageZenDriver>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<MessageZenDriver>().Property(p => p.Content).IsRequired();
+        builder.Entity<MessageZenDriver>().Property(p => p.CreatedAt).IsRequired();
         //Relations
-        builder.Entity<Message.Domain.Models.Message>()
+        builder.Entity<MessageZenDriver>()
             .HasOne(p => p.Emitter)
             .WithMany(p => p.EmittedMessages)
             .HasForeignKey(p => p.EmitterId);
         //.WithMany(p => p.ReceivedMessages)
 
-        builder.Entity<Message.Domain.Models.Message>()
+        builder.Entity<MessageZenDriver>()
             .HasOne(p => p.Receiver)
             .WithMany(p => p.ReceivedMessages)
             .HasForeignKey(p => p.ReceiverId); 
@@ -190,18 +192,18 @@ public class AppDbContext : DbContext
             .HasForeignKey(p => p.RecruiterId);
         
         //Notifications
-        builder.Entity<Notification.Domain.Models.Notification>().ToTable("Notifications");
-        builder.Entity<Notification.Domain.Models.Notification>().HasKey(p => p.Id);
-        builder.Entity<Notification.Domain.Models.Notification>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-        builder.Entity<Notification.Domain.Models.Notification>().Property(p => p.Content).IsRequired();
+        builder.Entity<NotificationZenDriver>().ToTable("Notifications");
+        builder.Entity<NotificationZenDriver>().HasKey(p => p.Id);
+        builder.Entity<NotificationZenDriver>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<NotificationZenDriver>().Property(p => p.Content).IsRequired();
         //Relations
-        builder.Entity<Notification.Domain.Models.Notification>()
+        builder.Entity<NotificationZenDriver>()
             .HasOne(p => p.Emitter)
             .WithMany(p => p.EmittedNotifications)
             .HasForeignKey(p => p.EmitterId);
         //.WithMany(p => p.ReceivedMessages)
 
-        builder.Entity<Notification.Domain.Models.Notification>()
+        builder.Entity<NotificationZenDriver>()
             .HasOne(p => p.Receiver)
             .WithMany(p => p.ReceivedNotifications)
             .HasForeignKey(p => p.ReceiverId);

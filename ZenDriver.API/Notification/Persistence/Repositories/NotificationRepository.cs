@@ -15,22 +15,22 @@ namespace ZenDriver.API.Notification.Persistence.Repositories
 
         }
 
-        public async Task<IEnumerable<Domain.Models.Notification>> GetNotificationsAsync()
+        public async Task<IEnumerable<NotificationZenDriver>> GetNotificationsAsync()
         {
             return await _context.Notifications.Include(p => p.Emitter).Include(q => q.Receiver).ToListAsync();
         }
 
-        public async Task AddNotificationAsync(Domain.Models.Notification notification)
+        public async Task AddNotificationAsync(NotificationZenDriver notification)
         {
             await _context.Notifications.AddAsync(notification);
         }
 
-        public async Task<Domain.Models.Notification> FindNotificationByIdAsync(int id)
+        public async Task<NotificationZenDriver> FindNotificationByIdAsync(int id)
         {
             return await _context.Notifications.FindAsync(id);
         }
                
-        public void Remove(Domain.Models.Notification notification)
+        public void Remove(NotificationZenDriver notification)
         {
             _context.Notifications.Remove(notification);
         }

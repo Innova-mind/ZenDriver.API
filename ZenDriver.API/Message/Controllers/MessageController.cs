@@ -24,25 +24,45 @@ public class MessageController : ControllerBase
     public async Task<IEnumerable<MessageResource>> GetAllMessagesAsync()
     {
         var messages = await _messageService.GetMessagesAsync();
-        var resources = _mapper.Map<IEnumerable<Domain.Models.Message>, IEnumerable<MessageResource>>(messages);
+        var resources = _mapper.Map<IEnumerable<MessageZenDriver>, IEnumerable<MessageResource>>(messages);
+
+        return resources;
+    }
+    
+    [HttpGet("search-by-id/{emitterId}")]
+    public async Task<IEnumerable<MessageResource>> GetMessagesByEmitterIdAsync(int emitterId)
+    {
+        var messages = await _messageService.GetMessagesByEmitterIdAsync(emitterId);
+        var resources = _mapper.Map<IEnumerable<MessageZenDriver>, IEnumerable<MessageResource>>(messages);
+
+        return resources;
+    }
+    [HttpGet("search-by-emitter-receiver/{emitterId}/{receiverId}")]
+    public async Task<IEnumerable<MessageResource>?> GetMessagesByEmitterReceiverIdAsync(int emitterId, int receiverId)
+    {
+        var messages = await _messageService.GetMessagesByEmitterReceiverIdAsync(emitterId, receiverId);
+        if (messages == null) return null;
+        var resources = _mapper.Map<IEnumerable<MessageZenDriver>, IEnumerable<MessageResource>>(messages);
 
         return resources;
     }
 
-    [HttpPost]
+    [HttpPost("add-message")]
     public async Task<IActionResult> AddMessageAsync([FromBody] SaveMessageResource resource)
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState.GetErrorMessages());
+        
+        resource.CreatedAt = DateTime.Now;
 
-        var message = _mapper.Map<SaveMessageResource, Domain.Models.Message>(resource);
+        var message = _mapper.Map<SaveMessageResource, MessageZenDriver>(resource);
 
         var result = await _messageService.AddMessageAsync(message);
 
         if (!result.Success)
             return BadRequest(result.Message);
 
-        var messageResource = _mapper.Map<Domain.Models.Message, MessageResource>(result.Resource);
+        var messageResource = _mapper.Map<MessageZenDriver, MessageResource>(result.Resource);
 
         return Ok(messageResource);
     }

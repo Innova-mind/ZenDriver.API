@@ -74,4 +74,9 @@ public class DriverprofileService : IDriverprofileService
             return new DriverprofileResponse($"An error ocurred while deleting the social network: {e.Message}");
         }
     }
+     public async Task<DriverprofileResponse> GetByIdAsync(int id)
+     {
+         var driverprofile = await _DriverprofileRepository.FindByIdAsync(id);
+         return new DriverprofileResponse(driverprofile);
+     }
 }

@@ -5,8 +5,8 @@ namespace ZenDriver.API.Notification.Domain.Services;
 
 public interface INotificationService
 {
-    Task<IEnumerable<Models.Notification>> GetNotificationsAsync();
-    Task<NotificationResponse> AddNotificationAsync(Models.Notification notification);    
+    Task<IEnumerable<NotificationZenDriver>> GetNotificationsAsync();
+    Task<NotificationResponse> AddNotificationAsync(NotificationZenDriver notification);    
     Task<NotificationResponse> DeleteAsync(int id);
 
 }

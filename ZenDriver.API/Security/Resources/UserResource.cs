@@ -12,4 +12,5 @@ public class UserResource
     public string Phone { get; set; }
     public string Role { get; set; }
     public string Description { get; set; }
+    public string ImageUrl { get; set; }
 }
