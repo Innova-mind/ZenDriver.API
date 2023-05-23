@@ -189,8 +189,8 @@ using (var context = scope.ServiceProvider.GetService<AppDbContext>())
 
 // Configure the HTTP request pipeline.
 // Always we will use swagger
-if (app.Environment.IsDevelopment() || true)
-{
+//if (app.Environment.IsDevelopment() || true)
+//{
     app.UseSwagger();
     app.UseSwaggerUI(options =>
     {
@@ -199,7 +199,7 @@ if (app.Environment.IsDevelopment() || true)
         //Added To View the tags in swagger
         options.DisplayOperationId();
     });
-}
+//}
 
 // Configure CORS
 app.UseCors(x => x
