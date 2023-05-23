@@ -61,8 +61,8 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "INNOVAMIND Profile+ Center API",
-        Description = "INNOVAMIND Profile+ Center API RESTful API",
+        Title = "INNOVAMIND ZenDriver Center API",
+        Description = "INNOVAMIND ZenDriver Center API RESTful API",
         TermsOfService = new Uri("https://innova-mind.com/tos"),
         Contact = new OpenApiContact
         {
@@ -188,7 +188,8 @@ using (var context = scope.ServiceProvider.GetService<AppDbContext>())
 }
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+// Always we will use swagger
+if (app.Environment.IsDevelopment() || true)
 {
     app.UseSwagger();
     app.UseSwaggerUI(options =>
