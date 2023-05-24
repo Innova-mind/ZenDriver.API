@@ -8,7 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d49c57e1-0e88-4a27-b8fe-bdb79f323770" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ZenDriver.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ZenDriver.API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ZenDriver.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ZenDriver.API/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZenDriver.API.Tests/obj/Debug/net6.0/ZenDriver.API.Tests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ZenDriver.API.Tests/obj/Debug/net6.0/ZenDriver.API.Tests.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +76,8 @@
       <option name="presentableId" value="Default" />
       <updated>1684848182553</updated>
       <workItem from="1684848183738" duration="2819000" />
+      <workItem from="1684851341619" duration="859000" />
+      <workItem from="1684852433702" duration="784000" />
     </task>
     <servers />
   </component>
