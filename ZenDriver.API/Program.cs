@@ -61,8 +61,8 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "INNOVAMIND Profile+ Center API",
-        Description = "INNOVAMIND Profile+ Center API RESTful API",
+        Title = "INNOVAMIND Center API",
+        Description = "INNOVAMIND Center API RESTful API",
         TermsOfService = new Uri("https://innova-mind.com/tos"),
         Contact = new OpenApiContact
         {

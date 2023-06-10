@@ -90,10 +90,10 @@ public class AppDbContext : DbContext
             .HasOne(p => p.Driver)
             .WithOne(p => p.DriverProfile)
             .HasForeignKey<DriverProfile.Domain.Models.DriverProfile>(p => p.DriverId);
-        builder.Entity<DriverProfile.Domain.Models.DriverProfile>()
-            .HasOne(p => p.License)
-            .WithOne(p => p.DriverProfile)
-            .HasForeignKey<DriverProfile.Domain.Models.DriverProfile>(p => p.LicenseId);
+        // builder.Entity<DriverProfile.Domain.Models.DriverProfile>()
+        //     .HasOne(p => p.License)
+        //     .WithOne(p => p.DriverProfile)
+        //     .HasForeignKey<DriverProfile.Domain.Models.DriverProfile>(p => p.LicenseId);
         
         //License
         builder.Entity<License>().ToTable("License");

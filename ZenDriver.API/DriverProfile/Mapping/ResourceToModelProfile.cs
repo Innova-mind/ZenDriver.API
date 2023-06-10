@@ -10,5 +10,6 @@ public class ResourceToModelProfile : Profile
     {
         CreateMap<SaveDriverResource, Driver> ();
         CreateMap<SaveDriverprofileResource, Domain.Models.DriverProfile> ();
+        CreateMap<SaveLicenseResource, License> ();
     }
 }

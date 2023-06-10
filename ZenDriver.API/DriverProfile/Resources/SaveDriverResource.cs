@@ -4,6 +4,6 @@ namespace ZenDriver.API.DriverProfile.Resources;
 public class SaveDriverResource
 {
     [Required]
-    public int Id { get; set; }
+    public int UserId { get; set; }
     
 }
