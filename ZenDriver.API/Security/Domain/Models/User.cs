@@ -17,6 +17,7 @@ public class User
     public string Role { get; set; }
     public string Description { get; set; }
     public string ImageUrl { get; set; }
+    public string BirthdayDate { get; set; }
 
     [JsonIgnore]
     public string PasswordHash { get; set; }

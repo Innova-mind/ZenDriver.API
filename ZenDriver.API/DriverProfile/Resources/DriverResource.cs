@@ -5,4 +5,6 @@ public class DriverResource
 {
     public int Id { get; set; }
     public User User { get; set; }
+
+    public string startingYear { get; set; }
 }

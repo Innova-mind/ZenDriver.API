@@ -17,6 +17,7 @@ public class DriverprofileRepository : BaseRepository, IDriverprofileRepository
         return await _context.Driverprofiles
             .Include(p => p.Driver)
             .Include(p => p.License)
+            .Include(p => p.Driver.User)
             .ToListAsync();
     }
 
