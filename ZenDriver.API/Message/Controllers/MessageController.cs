@@ -28,6 +28,14 @@ public class MessageController : ControllerBase
 
         return resources;
     }
+    [HttpGet("search-last-messages-receiver-id/{receiverId}")]
+    public IEnumerable<MessageResource> GetLatestMessagesByReceiverIdAsync(int receiverId)
+    {
+        var messages = _messageService.GetLatestMessagesByReceiverIdAsync(receiverId);
+        var resources = _mapper.Map<IEnumerable<MessageZenDriver>, IEnumerable<MessageResource>>(messages);
+
+        return resources;
+    }
     
     [HttpGet("search-by-id/{emitterId}")]
     public async Task<IEnumerable<MessageResource>> GetMessagesByEmitterIdAsync(int emitterId)

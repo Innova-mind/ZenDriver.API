@@ -10,4 +10,5 @@ public interface IMessageService
     Task<MessageResponse> AddMessageAsync(MessageZenDriver message);
     Task<IEnumerable<MessageZenDriver>?> GetMessagesByEmitterIdAsync(int emitterId);
     Task<IEnumerable<MessageZenDriver>?> GetMessagesByEmitterReceiverIdAsync(int emitterId, int receiverId);
+    List<MessageZenDriver> GetLatestMessagesByReceiverIdAsync(int receiverId);
 }

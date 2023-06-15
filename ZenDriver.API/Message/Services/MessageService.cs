@@ -70,6 +70,11 @@ public class MessageService : IMessageService
             return null;
         }
     }
+
+    public List<MessageZenDriver> GetLatestMessagesByReceiverIdAsync(int receiverId)
+    {
+        return _messageRepository.GetLatestMessagesByReceiverIdAsync(receiverId);
+    }
 }
 
 

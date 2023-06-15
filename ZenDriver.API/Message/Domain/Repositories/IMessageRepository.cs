@@ -16,4 +16,5 @@ public interface IMessageRepository
     Task<IEnumerable<MessageZenDriver>> GetLastMessageDriver(int id);
     Task<IEnumerable<MessageZenDriver>?> GetMessagesByEmitterIdAsync(int emitterId);
     Task<IEnumerable<MessageZenDriver>?> GetMessagesByEmitterIdReceiverIdAsync(int emitterId, int receiverId);
+    List<MessageZenDriver> GetLatestMessagesByReceiverIdAsync(int receiverId);
 }

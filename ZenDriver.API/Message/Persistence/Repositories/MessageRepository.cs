@@ -56,5 +56,22 @@ namespace ZenDriver.API.Message.Persistence.Repositories
                 .OrderBy(x=>x.CreatedAt).ToListAsync();
             return messages;
         }
+
+        public List<MessageZenDriver> GetLatestMessagesByReceiverIdAsync(int receiverId)
+        {
+            var latestMessages = _context.Messages
+                .Include(m => m.Emitter)
+                .Include(m => m.Receiver)
+                .Where(m => m.ReceiverId == receiverId || m.EmitterId == receiverId)
+                .AsEnumerable()
+                .GroupBy(m => m.ReceiverId == receiverId ? m.EmitterId : m.ReceiverId)
+                .Select(g => g.OrderByDescending(m => m.CreatedAt).FirstOrDefault())
+                .ToList();
+
+            return latestMessages;
+        }
+
+
+
     }
 }
