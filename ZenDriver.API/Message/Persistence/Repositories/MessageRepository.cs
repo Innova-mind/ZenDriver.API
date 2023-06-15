@@ -50,7 +50,8 @@ namespace ZenDriver.API.Message.Persistence.Repositories
 
         public async Task<IEnumerable<MessageZenDriver>?> GetMessagesByEmitterIdReceiverIdAsync(int emitterId, int receiverId)
         {
-            var messages = await _context.Messages.Where(p => p.EmitterId == emitterId && p.ReceiverId == receiverId)
+            var messages = await _context.Messages
+                .Where(p => (p.EmitterId == emitterId && p.ReceiverId == receiverId) || (p.EmitterId == receiverId && p.ReceiverId == emitterId))
                 .Include(x=>x.Emitter)
                 .Include(x=>x.Receiver)
                 .OrderBy(x=>x.CreatedAt).ToListAsync();

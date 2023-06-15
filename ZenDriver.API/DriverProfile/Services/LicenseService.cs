@@ -41,7 +41,7 @@ public class LicenseService : ILicenseService
 
         if (existingLicense == null)
             return new LicenseResponse("Social Network not found");
-        existingLicense.Gategory = License.Gategory;
+        existingLicense.Category = License.Category;
         existingLicense.Description = License.Description;
         
         try

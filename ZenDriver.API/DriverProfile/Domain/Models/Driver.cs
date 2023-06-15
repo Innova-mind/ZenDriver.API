@@ -9,6 +9,7 @@ public class Driver
     //Relationships
     public int UserId { get; set; }
     public User User { get; set; }
+    public String startingYear { get; set; }
     [JsonIgnore]
     public DriverProfile DriverProfile { get; set; }
 }

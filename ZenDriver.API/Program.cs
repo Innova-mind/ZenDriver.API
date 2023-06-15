@@ -61,8 +61,8 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "INNOVAMIND Profile+ Center API",
-        Description = "INNOVAMIND Profile+ Center API RESTful API",
+        Title = "INNOVAMIND Center API",
+        Description = "INNOVAMIND Center API RESTful API",
         TermsOfService = new Uri("https://innova-mind.com/tos"),
         Contact = new OpenApiContact
         {
@@ -188,8 +188,7 @@ using (var context = scope.ServiceProvider.GetService<AppDbContext>())
 }
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI(options =>
     {
@@ -198,7 +197,7 @@ if (app.Environment.IsDevelopment())
         //Added To View the tags in swagger
         options.DisplayOperationId();
     });
-}
+
 
 // Configure CORS
 app.UseCors(x => x

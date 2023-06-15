@@ -18,4 +18,7 @@ public class UpdateRequest
 
     public string Description { get; set; }
 
+    public string ImageUrl { get; set; }
+    public string BirthdayDate { get; set; }
+
 }

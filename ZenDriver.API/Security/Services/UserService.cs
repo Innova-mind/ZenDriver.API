@@ -31,21 +31,23 @@ public class UserService : IUserService
     {
         var user = await _userRepository.FindByUsernameAsync(request.Username);
         Console.WriteLine($"Request: {request.Username}, {request.Password}");
-        Console.WriteLine($"User: {user.Id}, {user.FirstName}, {user.LastName}, {user.UserName}, {user.PasswordHash}");
 
-        //Validate
+        // Verificar si el usuario existe
         if (user == null || !BCryptNet.Verify(request.Password, user.PasswordHash))
         {
             Console.WriteLine("Authentication Error");
             throw new AppException("Username or password is incorrect");
         }
 
+        Console.WriteLine($"User: {user.Id}, {user.FirstName}, {user.LastName}, {user.UserName}, {user.PasswordHash}");
         Console.WriteLine("Authentication successful. About to generate token");
-        // authentication successful
+
+        // Generar respuesta de autenticación
         var response = _mapper.Map<AuthenticateResponse>(user);
         Console.WriteLine($"Response: {response.Id}, {response.FirstName}, {response.LastName}, {response.Username}");
         response.Token = _jwtHandler.GenerateToken(user);
         Console.WriteLine($"Generated token is {response.Token}");
+
         return response;
     }
 

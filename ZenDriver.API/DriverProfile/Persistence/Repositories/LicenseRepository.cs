@@ -16,7 +16,6 @@ public class LicenseRepository : BaseRepository, ILicenseRepository
     public async Task<IEnumerable<License>> ListAsync()
     {
         return await _context.Licenses
-            .Include(p => p.DriverProfile)
             .ToListAsync();
     }
 
@@ -28,7 +27,6 @@ public class LicenseRepository : BaseRepository, ILicenseRepository
     public async Task<License> FindByIdAsync(int LicenseId)
     {
         return await _context.Licenses
-            .Include(p => p.DriverProfile)
             .FirstOrDefaultAsync(p => p.Id == LicenseId);
     }
     

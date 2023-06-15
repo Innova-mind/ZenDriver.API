@@ -11,5 +11,6 @@ public class ModelToResourceProfile :Profile
         
         CreateMap<Driver, DriverResource>();
         CreateMap<Domain.Models.DriverProfile, DriverprofileResource>();
+        CreateMap<License, LicenseResource>();
     }
 }
