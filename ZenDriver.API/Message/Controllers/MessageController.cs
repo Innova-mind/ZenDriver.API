@@ -64,13 +64,14 @@ public class MessageController : ControllerBase
         resource.CreatedAt = DateTime.Now;
 
         var message = _mapper.Map<SaveMessageResource, MessageZenDriver>(resource);
-
+        message.Receiver = await _messageService.FindReceiverByIdAsync(resource.ReceiverId);
         var result = await _messageService.AddMessageAsync(message);
 
         if (!result.Success)
             return BadRequest(result.Message);
 
         var messageResource = _mapper.Map<MessageZenDriver, MessageResource>(result.Resource);
+        
 
         return Ok(messageResource);
     }

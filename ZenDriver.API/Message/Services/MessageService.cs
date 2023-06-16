@@ -2,6 +2,7 @@
 using ZenDriver.API.Message.Domain.Repositories;
 using ZenDriver.API.Message.Domain.Services;
 using ZenDriver.API.Message.Domain.Services.Communication;
+using ZenDriver.API.Security.Domain.Models;
 using ZenDriver.API.Security.Domain.Repositories;
 using ZenDriver.API.Shared.Domain.Repositories;
 
@@ -74,6 +75,11 @@ public class MessageService : IMessageService
     public List<MessageZenDriver> GetLatestMessagesByReceiverIdAsync(int receiverId)
     {
         return _messageRepository.GetLatestMessagesByReceiverIdAsync(receiverId);
+    }
+
+    public Task<User?> FindReceiverByIdAsync(int resourceReceiverId)
+    {
+        return _userRepository.FindByIdAsync(resourceReceiverId);
     }
 }
 
