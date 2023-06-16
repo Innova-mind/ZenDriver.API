@@ -54,7 +54,7 @@ public class MessageController : ControllerBase
 
         return resources;
     }
-
+    
     [HttpPost("add-message")]
     public async Task<IActionResult> AddMessageAsync([FromBody] SaveMessageResource resource)
     {
