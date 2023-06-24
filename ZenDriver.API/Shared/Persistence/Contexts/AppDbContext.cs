@@ -52,7 +52,7 @@ public class AppDbContext : DbContext
         builder.Entity<SocialNetwork>().ToTable("SocialNetwork");
         builder.Entity<SocialNetwork>().HasKey(p => p.Id);
         builder.Entity<SocialNetwork>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-        builder.Entity<SocialNetwork>().Property(p => p.DescriptionSocialNetwork).IsRequired().HasMaxLength(100);
+        builder.Entity<SocialNetwork>().Property(p => p.DescriptionSocialNetwork).IsRequired().HasMaxLength(500);
         builder.Entity<SocialNetwork>().Property(p => p.UrlImageSocialNetwork).IsRequired().HasMaxLength(500);
         builder.Entity<SocialNetwork>().Property(p => p.Like).IsRequired().ValueGeneratedOnAdd();
         //Relationsships

@@ -7,7 +7,7 @@ public class SaveSocialNetworkResource
 
     [Required]
     public int UserId { get; set; }
-    [MaxLength(100)]
+    [MaxLength(500)]
     public string DescriptionSocialNetwork { get; set; }
     [MaxLength(500)]
     public string UrlImageSocialNetwork { get; set; }
