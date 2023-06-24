@@ -41,8 +41,9 @@ public class SocialNetworkService : ISocialNetworkService
 
         if (existingSocialNetwork == null)
             return new SocialNetworkResponse("Social Network not found");
-        existingSocialNetwork.NameSocialNetwork = socialNetwork.NameSocialNetwork;
-        existingSocialNetwork.UrlSocialNetwork = socialNetwork.UrlSocialNetwork;
+        existingSocialNetwork.DescriptionSocialNetwork = socialNetwork.DescriptionSocialNetwork;
+        existingSocialNetwork.UrlImageSocialNetwork = socialNetwork.UrlImageSocialNetwork;
+        existingSocialNetwork.Like = socialNetwork.Like;
         
         try
         {

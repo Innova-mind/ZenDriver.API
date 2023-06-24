@@ -8,8 +8,10 @@ public class SaveSocialNetworkResource
     [Required]
     public int UserId { get; set; }
     [MaxLength(100)]
-    public string NameSocialNetwork { get; set; }
+    public string DescriptionSocialNetwork { get; set; }
     [MaxLength(500)]
-    public string UrlSocialNetwork { get; set; }
+    public string UrlImageSocialNetwork { get; set; }
+
+    public int Like { get; set; } = 0;
 
 }
