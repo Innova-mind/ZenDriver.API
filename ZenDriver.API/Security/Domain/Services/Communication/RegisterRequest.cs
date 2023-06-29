@@ -22,5 +22,5 @@ public class RegisterRequest
     [Required]
     public string ImageUrl { get; set; }
     [Required]
-    public string BirthdayDate { get; set; }
+    public DateTime BirthdayDate { get; set; }
 }
