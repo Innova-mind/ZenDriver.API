@@ -137,7 +137,8 @@ public class AppDbContext : DbContext
         builder.Entity<User>().Property(p => p.Phone).IsRequired();
         builder.Entity<User>().Property(p => p.Description);
         builder.Entity<User>().Property(p => p.ImageUrl);
-        
+        builder.Entity<User>().Property(p => p.BirthdayDate).HasDefaultValue(DateTime.Now);
+
         //Messages
         builder.Entity<MessageZenDriver>().ToTable("Messages");
         builder.Entity<MessageZenDriver>().HasKey(p => p.Id);
